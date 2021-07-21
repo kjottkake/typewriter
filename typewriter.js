@@ -16,11 +16,29 @@ function typeWriter() {
       document.getElementById("demo").innerHTML += txt.charAt(i);
       i++;
       setTimeout(typeWriter, speed);
+    
       console.log("i: ", i); //test log
+      if (isEnd(i, txt.length)){
+          console.log("End reached.");
+        // document.getElementById("demo").innerHTML -= txt.charAt(i);
+        // i--;
+        // setTimeout(typeWriter,speed);
+      }
     }
   }
 
   setTimeout(typeWriter, 0); //runs typewriter  
+
+function isEnd(count, len){
+    if (count == len)
+    {
+        return (true);
+    } else {
+        return (false);
+    }
+}
+
+
 
 //print text
     //if zero then adds
