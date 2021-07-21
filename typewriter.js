@@ -10,28 +10,57 @@ const txt = greetings[0]; //sets random text array for output
 const speed = 60;
 
 
+// //typewriter function
+// function typeWriter() {
+//     if (i < txt.length) {
+//       document.getElementById("demo").innerHTML += txt.charAt(i);
+//      console.log("txt.charAt : ", txt.charAt(i));
+//     i++;
+//       setTimeout(typeWriter, speed);
+
+//       console.log("i: ", i); //test log
+//       if (isEnd(i, txt.length)){
+//           console.log("End reached.");
+//         // document.getElementById("demo").innerHTML -= txt.charAt(i);
+//         // i--;
+//         // setTimeout(typeWriter,speed);
+//       }
+//     }
+//   }
+
+// //typewriter function
+// function typeWriter() {
+//     if (!(isEnd(i, txt.length))) {
+//         document.getElementById("demo").innerHTML += txt.charAt(i);
+//         i++;
+//         setTimeout(typeWriter, speed);
+//     }
+// }
+
+
 //typewriter function
 function typeWriter() {
-    if (i < txt.length) {
-      document.getElementById("demo").innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    
-      console.log("i: ", i); //test log
-      if (isEnd(i, txt.length)){
-          console.log("End reached.");
-        // document.getElementById("demo").innerHTML -= txt.charAt(i);
-        // i--;
-        // setTimeout(typeWriter,speed);
-      }
+    if (!(isEnd(i, txt.length))) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
     }
-  }
 
-  setTimeout(typeWriter, 0); //runs typewriter  
+    if (isEnd(i, txt.length)){
+        setTimeout(clearText, 2000);
+    }
 
-function isEnd(count, len){
-    if (count == len)
-    {
+
+}
+
+function clearText(){
+    document.getElementById("demo").innerHTML = "";
+}
+
+setTimeout(typeWriter, 0); //runs typewriter  
+
+function isEnd(count, len) {
+    if (count == len) {
         return (true);
     } else {
         return (false);
@@ -42,13 +71,13 @@ function isEnd(count, len){
 
 //print text
     //if zero then adds
-        
+
         //checks if reached end of textline
             //loops through dom and adds letter to text
         //if at the end of the textline
             //loops through and deletes txt
-    
-    
+
+
 
 //delete text
 
